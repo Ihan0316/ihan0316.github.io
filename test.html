@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 소통 비서 "통(通)역기" - 1일 해커톤 계획</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 24px;
+            bottom: 0;
+            width: 2px;
+            background-color: #f59e0b;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 16px;
+            width: 18px;
+            height: 18px;
+            background-color: #f59e0b;
+            border: 3px solid #fffbeb;
+            border-radius: 50%;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50 text-stone-800">
+
+    <header class="py-12 bg-white shadow-md">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-amber-600">AI 소통 비서 "통(通)역기" </h1>
+            <p class="text-xl md:text-2xl text-stone-600 mt-4">1일 완성 해커톤 계획 </p>
+            <p class="text-lg text-stone-500 mt-2">"세대도 통하고, 지역도 통한다!" (오늘은 세대부터!) </p>
+        </div>
+    </header>
+
+    <nav class="sticky top-0 bg-white shadow-lg z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center h-16 space-x-4 md:space-x-8 overflow-x-auto">
+                <a href="#goal"
+                    class="nav-link text-stone-600 hover:text-amber-600 font-semibold px-3 py-2 rounded-md transition-colors whitespace-nowrap">핵심
+                    목표</a>
+                <a href="#features"
+                    class="nav-link text-stone-600 hover:text-amber-600 font-semibold px-3 py-2 rounded-md transition-colors whitespace-nowrap">핵심
+                    기능</a>
+                <a href="#tech"
+                    class="nav-link text-stone-600 hover:text-amber-600 font-semibold px-3 py-2 rounded-md transition-colors whitespace-nowrap">기술
+                    스택</a>
+                <a href="#schedule"
+                    class="nav-link text-stone-600 hover:text-amber-600 font-semibold px-3 py-2 rounded-md transition-colors whitespace-nowrap">세부
+                    일정</a>
+                <a href="#strategy"
+                    class="nav-link text-stone-600 hover:text-amber-600 font-semibold px-3 py-2 rounded-md transition-colors whitespace-nowrap">핵심
+                    전략</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="goal" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-stone-800 mb-6 border-l-4 border-amber-500 pl-4">핵심 목표 (MVP) </h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-xl text-stone-700 leading-relaxed">
+                    "신조어(손주어)와 어르신 말씀(할머니어)을 상호 '정서 번역'해주는 텍스트 기반 웹페이지를 완성한다."
+                </p>
+                <p class="text-md text-stone-600 mt-4">
+                    이 애플리케이션은 1일 해커톤의 핵심 목표(MVP)를 달성하기 위한 구체적인 계획을 안내합니다. 각 섹션을 클릭하며 계획의 세부 내용을 탐색해 보세요.
+                </p>
+            </div>
+        </section>
+
+        <section id="features" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-stone-800 mb-6 border-l-4 border-amber-500 pl-4">핵심 기능</h2>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="flex border-b border-stone-200">
+                    <button data-tab="must-have"
+                        class="feature-tab flex-1 py-4 px-2 text-center font-semibold bg-amber-100 text-amber-800 border-b-4 border-amber-500">
+                        필수 구현 (Must-Have)
+                    </button>
+                    <button data-tab="wont-have"
+                        class="feature-tab flex-1 py-4 px-2 text-center font-semibold text-stone-500 hover:bg-stone-50">
+                        포기 (Won't-Have)
+                    </button>
+                </div>
+                <div class="p-8">
+                    <div id="must-have" class="feature-content">
+                        <p class="text-sm text-stone-600 mb-6">프로젝트의 성공을 위해 반드시 구현해야 하는 핵심 기능입니다.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-amber-600 font-bold mr-3">✔</span>
+                                <span class="text-stone-700"><b>텍스트 입력/출력:</b> 사용자가 원문을 입력하고 번역된 결과를 볼 수 있는 UI </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-600 font-bold mr-3">✔</span>
+                                <span class="text-stone-700"><b>통역 모드 선택:</b> '손주어→할머니어' (Mode A), '할머니어→손주어' (Mode B)
+                                    2가지 모드 선택 기능 </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-600 font-bold mr-3">✔</span>
+                                <span class="text-stone-700"><b>'통역하기' 버튼:</b> API 호출을 실행하는 메인 버튼 </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-amber-600 font-bold mr-3">✔</span>
+                                <span class="text-stone-700"><b>Gemini API 연동:</b> 선택된 모드(A, B)에 맞춰 적절한 프롬프트를 전송하고 응답을
+                                    받는 로직 </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="wont-have" class="feature-content hidden">
+                        <p class="text-sm text-stone-600 mb-6">1일이라는 한정된 시간 내에 현실적인 완성을 위해 과감히 포기하는 기능입니다.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-red-600 font-bold mr-3">✖</span>
+                                <span class="text-stone-700"><b>지역 공감 (사투리 번역):</b> Mode C, D </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-600 font-bold mr-3">✖</span>
+                                <span class="text-stone-700"><b>모든 음성 기능 (STT / TTS)</b> </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-600 font-bold mr-3">✖</span>
+                                <span class="text-stone-700"><b>복잡한 UI/에러 처리:</b> 세밀한 에러 핸들링이나 복잡한 UI 애니메이션은 우선순위에서
+                                    제외합니다. </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-stone-800 mb-6 border-l-4 border-amber-500 pl-4">기술 스택 </h2>
+            <p class="text-md text-stone-600 mb-8">1일 해커톤에 맞춰 가장 빠르고 효율적인 조합으로 구성된 기술 스택입니다. </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <span class="text-4xl">🖥️</span>
+                    <h3 class="text-xl font-bold text-stone-800 mt-4 mb-2">프론트엔드</h3>
+                    <p class="text-stone-600">HTML + Tailwind CSS + Vanilla JavaScript </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <span class="text-4xl">🧠</span>
+                    <h3 class="text-xl font-bold text-stone-800 mt-4 mb-2">핵심 엔진</h3>
+                    <p class="text-stone-600">Google Gemini API (gemini-2.5-flash-preview-09-2025) </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <span class="text-4xl">🚀</span>
+                    <h3 class="text-xl font-bold text-stone-800 mt-4 mb-2">배포</h3>
+                    <p class="text-stone-600">Vercel 또는 GitHub Pages </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-stone-800 mb-6 border-l-4 border-amber-500 pl-4">세부 일정 (Interactive) </h2>
+            <p class="text-md text-stone-600 mb-8">시간대별 계획입니다.  각 항목을 클릭하여 세부 태스크와 팁을 확인하세요.</p>
+            <div class="relative pl-8">
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>10:00 - 11:00 (1H): 기획 및 설계</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>1일 MVP 기능 확정 (Mode A, B만) </li>
+                            <li>Gemini API Key 발급 </li>
+                            <li>UI 와이어프레임 (초간단) </li>
+                            <li>Git Repository 생성 </li>
+                        </ul>
+                        <p class="text-sm text-amber-700 mt-4 p-3 bg-amber-50 rounded-md"><b>Tip!</b> 역할 분담: 프롬프트 엔지니어 /
+                            UI(HTML/CSS) / 로직(JS/API) </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>11:00 - 13:00 (2H): UI 뼈대 및 API 연동</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>index.html 구조 작성 (입력/출력창, 모드 &lt;select&gt;, 버튼) </li>
+                            <li>Tailwind CSS CDN 연결 </li>
+                            <li>JavaScript 파일 생성 및 Gemini API 기본 호출 함수 구현 </li>
+                            <li>console.log로 API 응답 오는지 1차 확인 </li>
+                        </ul>
+                        <p class="text-sm text-amber-700 mt-4 p-3 bg-amber-50 rounded-md"><b>Tip!</b> fetch 함수로 API 호출
+                            로직부터 검증. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-stone-500 bg-stone-100 p-6 rounded-lg shadow-md w-full">
+                        13:00 - 14:00 (1H): 점심 식사 🍔
+                    </h3>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>14:00 - 17:00 (3H): (핵심) 프롬프트 엔지니어링</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>(Mode A) '손주어→할머니어' 시스템 프롬프트 작성 및 테스트 </li>
+                            <li>(Mode B) '할머니어→손주어' 시스템 프롬프트 작성 및 테스트 </li>
+                            <li>JS 로직과 프롬프트 연동 (모드 선택 시 다른 프롬프트 적용) </li>
+                        </ul>
+                        <p class="text-sm text-amber-700 mt-4 p-3 bg-amber-50 rounded-md"><b>Tip!</b> 오늘 성패의 90%가 여기에
+                            달렸습니다. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>17:00 - 18:00 (1H): 기능 통합 및 UI 디자인</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>UI와 JS 로직 완전 연동 </li>
+                            <li>'통역하기' 버튼 클릭 → API 호출 → 출력창에 결과 표시 </li>
+                            <li>Tailwind로 기본적인 디자인 완성 (제목, 색상 등) </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-stone-500 bg-stone-100 p-6 rounded-lg shadow-md w-full">
+                        18:00 - 19:00 (1H): 저녁 식사 🍕
+                    </h3>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>19:00 - 20:30 (1.5H): 필수 고도화</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>로딩 스피너 구현 (API 응답 대기 중) </li>
+                            <li>간단한 에러 처리 (입력값이 없을 때 알림) </li>
+                            <li>(시간 되면) 클립보드 복사 버튼 추가 </li>
+                        </ul>
+                        <p class="text-sm text-amber-700 mt-4 p-3 bg-amber-50 rounded-md"><b>Tip!</b> 로딩 스피너는 API 앱의 필수
+                            요소! </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pb-12">
+                    <div class="timeline-dot"></div>
+                    <button class="timeline-trigger w-full text-left">
+                        <h3
+                            class="text-xl font-bold text-stone-800 bg-white p-6 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow w-full flex justify-between items-center">
+                            <span>20:30 - (마감까지): 배포 및 발표 준비</span>
+                            <span class="text-amber-600 text-2xl details-arrow">▼</span>
+                        </h3>
+                    </button>
+                    <div
+                        class="timeline-details hidden overflow-hidden transition-all duration-300 max-h-0 mt-4 bg-white p-6 rounded-lg shadow-inner">
+                        <p class="font-semibold text-stone-700">세부 태스크:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-stone-700 mt-2">
+                            <li>Vercel 또는 GitHub Pages로 정적 배포 (5분 컷) </li>
+                            <li>발표 자료(PPT) 작성 </li>
+                            <li>서비스 소개, 데모 시연 (가장 중요!), (포기한) 향후 계획 발표 </li>
+                        </ul>
+                        <p class="text-sm text-amber-700 mt-4 p-3 bg-amber-50 rounded-md"><b>Tip!</b> '알잘딱깔센'을 넣었을 때
+                            '알아서 잘...'이 나오는 감동적인 시연을 준비하세요. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold text-stone-800 mb-6 border-l-4 border-amber-500 pl-4">핵심 성공 전략: 프롬프트 </h2>
+            <p class="text-md text-stone-600 mb-8">프로젝트의 성패를 좌우할 2가지 핵심 Gemini API 프롬프트 예시입니다.  이 프롬프트를 기반으로 테스트하고 발전시켜야
+                합니다.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-stone-800 mb-3">Mode A: 손주어 → 할머니어 (정서 번역) </h3>
+                    <div class="relative">
+                        <pre id="prompt-a"
+                            class="bg-stone-100 text-stone-700 p-4 rounded-md overflow-x-auto text-sm leading-relaxed">"당신은 신조어와 줄임말을 전혀 모르는 할머니에게 손주의 메시지를 번역해주는 '다정한 AI 비서'입니다. 손주의 텍스트를 받으면, 신조어의 뜻을 괄호 안에 풀어서 설명하고, 전체 문장을 할머니가 이해하기 쉽고 정겨운 말투로 재구성해야 합니다. 예를 들어 '킹받네'는 '(왕짜증 났어)'처럼 풀고, '폼 미쳤다'는 '(정말 멋지다)'처럼 풀어주세요. 절대 손주의 말투 그대로 번역하면 안 됩니다. 오직 번역된 문장만 답해주세요." </pre>
+                        <button
+                            class="copy-btn absolute top-2 right-2 bg-stone-200 text-stone-700 px-2 py-1 rounded text-xs font-semibold hover:bg-stone-300"
+                            data-target="prompt-a">복사</button>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-stone-800 mb-3">Mode B: 할머니어 → 손주어 (유머 번역) </h3>
+                    <div class="relative">
+                        <pre id="prompt-b"
+                            class="bg-stone-100 text-stone-700 p-4 rounded-md overflow-x-auto text-sm leading-relaxed">"당신은 할머니의 다정한 메시지를 요즘 MZ세대 손주가 재밌게 받아들일 수 있도록 '유머러스한 신조어'로 번역하는 AI 비서입니다. 할머니의 문맥과 사랑은 유지하되, '많관부', '얼공', '밥무?' 등 최신 유행하는 밈과 신조어를 적극 사용해서 문장을 재구성해야 합니다. 오직 번역된 문장만 답해주세요." </pre>
+                        <button
+                            class="copy-btn absolute top-2 right-2 bg-stone-200 text-stone-700 px-2 py-1 rounded text-xs font-semibold hover:bg-stone-300"
+                            data-target="prompt-b">복사</button>
+                    </div>
+                </div>
+            </div>
+            <div id="copy-message"
+                class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg transition-all opacity-0 -translate-y-5">
+                프롬프트가 복사되었습니다!
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 bg-white border-t border-stone-200 py-8">
+        <div class="container mx-auto px-6 text-center text-stone-500">
+            <p>&copy; 2025 "통(通)역기" 해커톤 팀. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const featureTabs = document.querySelectorAll('.feature-tab');
+            const featureContents = document.querySelectorAll('.feature-content');
+
+            featureTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tab;
+
+                    featureTabs.forEach(t => {
+                        t.classList.remove('bg-amber-100', 'text-amber-800', 'border-b-4', 'border-amber-500');
+                        t.classList.add('text-stone-500', 'hover:bg-stone-50');
+                    });
+                    tab.classList.add('bg-amber-100', 'text-amber-800', 'border-b-4', 'border-amber-500');
+                    tab.classList.remove('text-stone-500', 'hover:bg-stone-50');
+
+                    featureContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            const timelineTriggers = document.querySelectorAll('.timeline-trigger');
+            timelineTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const details = trigger.nextElementSibling;
+                    const arrow = trigger.querySelector('.details-arrow');
+
+                    if (details.style.maxHeight) {
+                        details.style.maxHeight = null;
+                        details.classList.add('hidden');
+                        arrow.classList.remove('rotate-180');
+                    } else {
+                        details.classList.remove('hidden');
+                        details.style.maxHeight = details.scrollHeight + "px";
+                        arrow.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            const navLinks = document.querySelectorAll('a.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            const copyMessage = document.getElementById('copy-message');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    const targetText = document.getElementById(targetId).innerText;
+
+                    const showMessage = () => {
+                        copyMessage.classList.remove('opacity-0', '-translate-y-5');
+                        copyMessage.classList.add('opacity-100', 'translate-y-0');
+                        setTimeout(() => {
+                            copyMessage.classList.remove('opacity-100', 'translate-y-0');
+                            copyMessage.classList.add('opacity-0', '-translate-y-5');
+                        }, 2000);
+                    };
+
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(targetText).then(() => {
+                            showMessage();
+                        }).catch(err => {
+                            console.error('Failed to copy with navigator.clipboard, trying fallback: ', err);
+                            fallbackCopy(targetText, showMessage);
+                        });
+                    } else {
+                        fallbackCopy(targetText, showMessage);
+                    }
+                });
+            });
+
+            function fallbackCopy(text, successCallback) {
+                try {
+                    const tempTextArea = document.createElement('textarea');
+                    tempTextArea.value = text;
+                    document.body.appendChild(tempTextArea);
+                    tempTextArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempTextArea);
+                    successCallback();
+                } catch (err) {
+                    console.error('Failed to copy text with fallback: ', err);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```eof
